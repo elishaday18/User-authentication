@@ -37,6 +37,7 @@ router.post('/register', function (req, res, next) {
                 return res.redirect('/profile');
             }
         });
+
     } else {
         var err = new Error('All fields required!');
         err.status = 400;
