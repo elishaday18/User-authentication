@@ -6,20 +6,20 @@ var UserSchema = new mongoose.Schema({
         required: true,
         trim: true
     }
-    name: {
+   /* name: {
         type: String,
         required: true,
         trim: true
-    }
-    favoriteBook: {
+    }; */
+   /* favoriteBook: {
         type: String,
         required: true,
         trim: true
-    }
-    password: {
+    }; 
+     password: {
         type: String,
         required: true
-    }
+    }; */
 });
 
 var User = mongoose.model('User', UserSchema);

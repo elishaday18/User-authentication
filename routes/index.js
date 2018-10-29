@@ -22,6 +22,21 @@ router.post('/register', function (req, res, next) {
             error.status = 400;
             return next(err);
         }
+        //create object with form input
+        var userData = {
+            email: req.body.email,
+            name: req.body.name,
+            favoriteBook: req.body.favoriteBook,
+            password: req.body.password
+        };
+        // use Schema's create method to insert document into mongo
+        User.create(userData, function (error, user) {
+            if (error) {
+                return next(err);
+            } else {
+                return res.redirect('/profile');
+            }
+        });
     } else {
         var err = new Error('All fields required!');
         err.status = 400;
